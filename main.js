@@ -98,6 +98,7 @@ function Caculator(input) {
   this.multiply = this.operators.indexOf("*");
   this.divide = this.operators.indexOf("/");
   this.addHandle = function () {
+    // Cộng 2 phần tử lại
     this.numbers.splice(
       this.add,
       2,
@@ -106,13 +107,18 @@ function Caculator(input) {
     );
     this.operators.splice(this.add, 1);
     this.add = this.operators.indexOf("+");
+    console.log("add: ", this.numbers);
   };
   this.substractHandle = function () {
     let numbers = this.numbers;
     let substract = this.substract;
     let operators = this.operators;
-    numbers.splice(substract, 2, numbers[substract] - numbers[substract + 1]);
-    operators.splice(substract, 1);
+    this.numbers.splice(
+      substract,
+      2,
+      numbers[substract] - numbers[substract + 1]
+    );
+    this.operators.splice(substract, 1);
     this.substract = operators.indexOf("-");
   };
   this.multiplyHandle = function () {
@@ -120,19 +126,23 @@ function Caculator(input) {
     let operators = this.operators;
     let multiply = this.multiply;
 
-    numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
-    operators.splice(multiply, 1);
+    this.numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
+    this.operators.splice(multiply, 1);
     this.multiply = operators.indexOf("*");
   };
   this.divideHandle = function () {
-    let numbers = this.numbers;
-    let operators = this.operators;
-    let divide = this.divide;
-    numbers.splice(divide, 2, numbers[divide] / numbers[divide + 1]);
-    operators.splice(divide, 1);
-    this.divide = operators.indexOf("/");
+    this.numbers.splice(
+      this.divide,
+      2,
+      this.numbers[this.divide] / this.numbers[this.divide + 1]
+    );
+    console.log("div: ", this.numbers);
+    this.operators.splice(this.divide, 1);
+    this.divide = this.operators.indexOf("/");
   };
   this.caculator = function () {
+    console.log(this.operators);
+
     while (this.divide != -1) {
       this.divideHandle();
     }
