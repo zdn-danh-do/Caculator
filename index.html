@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="gridsystem.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="caculator__container">
+            <div  class="caculator__screen">
+                <div id="screen" class="caculator__screen__container">
+                    <!-- <div class="caculator__screen__input">
+                        <p>6000</p><span class="method">/</span><p>2</p><span class="method">+</span><p>33227</p><span class="method">*</span><p>2</p></p>
+                    </div> -->
+                    <input id="caculator__screen__input" type="text" value=""/>
+                    <p class="caculator__screen__result">
+                        <!-- =12.454 -->
+                    </p>
+                </div >
+            </div>
+            <div class="caculator__key__container">
+                <div class="row caculator__key__wrap">
+                    <div class="col l-9">
+                        <di class="wrap__col">
+                            <div class="row flex-1">
+                                <div class="col l-4 "><button id="clear" class="button__normal button__delete">AC</button ></div>
+                                <div class="col l-4"><button onclick="deleteLastChar()" class="button__normal button__delete"><i class="fa-solid fa-delete-left"></i></button class="button__normal"></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle('/')"  class="button__normal button__primary">/</button></div>
+                            </div>
+                            <div class="row flex-1">
+                                <div class="col l-4"><button onclick="inputNumberHandle(7)" class="button__normal">7</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle(8)" class="button__normal">8</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle(9)" class="button__normal">9</button></div>
+                            </div>
+                            <div class="row flex-1">
+                                <div class="col l-4"><button onclick="inputNumberHandle(4)" class="button__normal">4</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle(5)" class="button__normal">5</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle(6)" class="button__normal">6</button></div>
+                            </div>
+                            <div class="row flex-1">
+                                <div class="col l-4"><button onclick="inputNumberHandle(1)" class="button__normal">1</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle(2)" class="button__normal">2</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle(3)" class="button__normal">3</button></div>
+                            </div>
+                            <div class="row flex-1">
+                                <div class="col l-8"><button onclick="inputNumberHandle(0)" class="button__0">0</button></div>
+                                <div class="col l-4"><button onclick="inputNumberHandle('.')"  class="button__dot">.</button></div>
+                            </div>
+                        </di >
+                    </div>
+                    <div class="col l-3">
+                        <div class="row caculator__key__right">
+                            <div class="height-2"><button onclick="inputNumberHandle('*')"  class="button__right__normal button__primary">*</button></div>
+                            <div class="height-2"><button onclick="inputNumberHandle('-')"  class="button__right__normal mt-5 button__primary">-</button></div>
+                            <div class="height-4"><button onclick="inputNumberHandle('+')"  class="button__right__plus button__primary">+</button></div>
+                            <div class="height-4"><button onclick = "caculatingNumberByOOPHandle()"
+                                class="button__right__equal button__primary">=</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <!-- <script src="CaculatorClass.js"></script> -->
+</body>
+</html>
